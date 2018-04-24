@@ -1,0 +1,14 @@
+{
+  "name": "patterns-to-match",
+  "version": "1.0.0",
+  "description": "OV pattern matching exercise.",
+  "main": "pattern.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "init-pattern": "./pattern.js"
+  }
+}
