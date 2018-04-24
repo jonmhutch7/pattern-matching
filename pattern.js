@@ -84,13 +84,15 @@ const initializePatternMatch = (data, cb) => {
 					matchesIndepth.push({'match': match, 'wildcards': wildcards, 'firstWildcard': firstWildcard})
 				});
 				// first, find the match with the least amt of wildcards
+				// matchesIndepth[0].wildcards) is the initial value for min
 				const minWildcards = matchesIndepth.reduce((min, match) => match.wildcards < min ? match.wildcards : min, matchesIndepth[0].wildcards);
 				// filter the array to remove matches that don't have the least amout of wildcards
 				matchesIndepth = matchesIndepth.filter(value => value.wildcards === minWildcards);
 
-				// If there is still more than one match...
+				// If there is still more than one match
 				if (matchesIndepth.length > 1) {
 					// Find the match with the wildcard in latest position in the pattern
+					// matchesIndepth[0].firstWildcard is the initial value for max
 					const firstWildcard = matchesIndepth.reduce((max, match) => match.firstWildcard > max ? match.firstWildcard : max, matchesIndepth[0].firstWildcard);
 					// filter the array to remove matches that are earlier in the pattern than the match with the latest wildcard
 					matchesIndepth = matchesIndepth.filter(value => value.firstWildcard === firstWildcard);
