@@ -1,2 +1,7 @@
 # pattern-matching
 Reads a file of patterns and paths, spits out matching patterns.
+
+## TODOs 
+Add file streaming for larger files to improve speed, instead of reading entire file to memory
+Explore lodash functions to speed up process of matching, filtering
+
